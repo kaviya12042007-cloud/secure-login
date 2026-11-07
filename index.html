@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Login & Register</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="card">
+<h2>Welcome 👋</h2>
+<div class="tabs">
+<button id="loginTab" class="active" onclick="showForm('login')">Login</button>
+<button id="regTab" onclick="showForm('register')">Register</button>
+</div>
+
+<form id="loginForm" onsubmit="return validateLogin(event)">
+<label>Email</label>
+<input type="text" id="loginEmail" placeholder="Enter email">
+<small id="loginEmailErr"></small>
+<label>Password</label>
+<div class="pass-box">
+<input type="password" id="loginPass" placeholder="Enter password">
+<span onclick="togglePass('loginPass',this)">Show</span>
+</div>
+<small id="loginPassErr"></small>
+<button class="btn">Login</button>
+<p id="loginSuccess" class="success"></p>
+</form>
+
+<form id="registerForm" class="hidden" onsubmit="return validateRegister(event)">
+<label>Name</label>
+<input type="text" id="regName" placeholder="Enter name">
+<small id="regNameErr"></small>
+<label>Email</label>
+<input type="text" id="regEmail" placeholder="Enter email">
+<small id="regEmailErr"></small>
+<label>Password</label>
+<div class="pass-box">
+<input type="password" id="regPass" placeholder="Min 6 characters">
+<span onclick="togglePass('regPass',this)">Show</span>
+</div>
+<small id="regPassErr"></small>
+<label>Confirm Password</label>
+<div class="pass-box">
+<input type="password" id="regConfirm" placeholder="Re-enter password">
+<span onclick="togglePass('regConfirm',this)">Show</span>
+</div>
+<small id="regConfirmErr"></small>
+<button class="btn">Create Account</button>
+<p id="regSuccess" class="success"></p>
+</form>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
